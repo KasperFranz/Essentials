@@ -312,7 +312,7 @@ public class User extends UserData implements Comparable<User>, IReplyTo, net.es
 			nickname = ess.getSettings().getNicknamePrefix() + nick;
 			suffix = "§r";
 		}
-
+		String opText = "";
 		if (this.getBase().isOp())
 		{
 			try
@@ -320,8 +320,7 @@ public class User extends UserData implements Comparable<User>, IReplyTo, net.es
 				final ChatColor opPrefix = ess.getSettings().getOperatorColor();
 				if (opPrefix != null && opPrefix.toString().length() > 0)
 				{
-					prefix.insert(0, opPrefix.toString());
-					suffix = "§r";
+					opText = opPrefix.toString();
 				}
 			}
 			catch (Exception e)
@@ -330,7 +329,7 @@ public class User extends UserData implements Comparable<User>, IReplyTo, net.es
 		}
 
 		if (ess.getSettings().addPrefixSuffix())
-		{
+		{ 
 			//These two extra toggles are not documented, because they are mostly redundant #EasterEgg
 			if (!ess.getSettings().disablePrefix())
 			{
@@ -346,7 +345,7 @@ public class User extends UserData implements Comparable<User>, IReplyTo, net.es
 			}
 		}
 		final String strPrefix = prefix.toString();
-		String output = strPrefix + nickname + suffix;
+		String output = strPrefix + suffix + opText + nickname+"§r"; ;
 		if (!longnick && output.length() > 16)
 		{
 			output = strPrefix + nickname;
