@@ -40,6 +40,7 @@ import org.bukkit.plugin.RegisteredListener;
 import org.bukkit.plugin.ServicesManager;
 import org.bukkit.plugin.UnknownDependencyException;
 import org.bukkit.plugin.messaging.Messenger;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitScheduler;
 import org.bukkit.scheduler.BukkitTask;
 import org.bukkit.scheduler.BukkitWorker;
@@ -308,6 +309,60 @@ public class FakeServer implements Server
 			public int scheduleAsyncDelayedTask(Plugin plugin, Runnable r)
 			{
 				throw new UnsupportedOperationException("Not supported yet.");
+			}
+
+			@Override
+			public int scheduleSyncDelayedTask(Plugin plugin, BukkitRunnable br, long l)
+			{
+				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+			}
+
+			@Override
+			public int scheduleSyncDelayedTask(Plugin plugin, BukkitRunnable br)
+			{
+				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+			}
+
+			@Override
+			public int scheduleSyncRepeatingTask(Plugin plugin, BukkitRunnable br, long l, long l1)
+			{
+				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+			}
+
+			@Override
+			public BukkitTask runTask(Plugin plugin, BukkitRunnable br) throws IllegalArgumentException
+			{
+				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+			}
+
+			@Override
+			public BukkitTask runTaskAsynchronously(Plugin plugin, BukkitRunnable br) throws IllegalArgumentException
+			{
+				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+			}
+
+			@Override
+			public BukkitTask runTaskLater(Plugin plugin, BukkitRunnable br, long l) throws IllegalArgumentException
+			{
+				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+			}
+
+			@Override
+			public BukkitTask runTaskLaterAsynchronously(Plugin plugin, BukkitRunnable br, long l) throws IllegalArgumentException
+			{
+				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+			}
+
+			@Override
+			public BukkitTask runTaskTimer(Plugin plugin, BukkitRunnable br, long l, long l1) throws IllegalArgumentException
+			{
+				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+			}
+
+			@Override
+			public BukkitTask runTaskTimerAsynchronously(Plugin plugin, BukkitRunnable br, long l, long l1) throws IllegalArgumentException
+			{
+				throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 			}
 		};
 	}
